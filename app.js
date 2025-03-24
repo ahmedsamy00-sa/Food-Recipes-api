@@ -8,7 +8,6 @@ dotenv.config();
 const app = express();
 app.use(Cors());
 
-const localIP = '192.168.43.55';
 const PORT = process.env.PORT || 3000;
 
 
@@ -24,6 +23,6 @@ import('./config/server.cjs').then((module) => {
 app.use('/api/users', userRoutes);
 app.use('/api/recipes', recipeRoutes);
 
-app.listen(PORT, localIP, () => {
-    console.log(`Server running at http:// ${localIP} : ${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Server running at: ${PORT}`);
 });
